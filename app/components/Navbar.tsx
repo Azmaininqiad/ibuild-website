@@ -4,13 +4,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
-  { label: "Clients", href: "/clients" },
-  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -36,11 +33,17 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-            <div className="w-10 h-10 bg-[#e8621a] rounded flex items-center justify-center">
-              <span className="text-white font-bold text-lg leading-none">iB</span>
+            <div className="relative w-28 h-10 sm:w-32 sm:h-11">
+              <Image
+                src="/images/Company_logo.png"
+                alt="iBuild General Contractors"
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
-            <div className="hidden sm:block">
-              <p className="text-white font-bold text-sm leading-tight">Electrical Industrial</p>
+            <div className="hidden sm:block border-l border-white/20 pl-3">
+              <p className="text-white font-semibold text-xs leading-tight">Electrical Industrial</p>
               <p className="text-[#00a8cc] text-xs leading-tight">Service & Machine Maintenance</p>
             </div>
           </Link>

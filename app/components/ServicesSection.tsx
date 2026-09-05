@@ -93,29 +93,13 @@ export default function ServicesSection() {
               <div className="p-6 flex flex-col flex-1">
                 <h3 className="text-[#0a1628] font-bold text-lg mb-2">{service.title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed flex-1">{service.description}</p>
-                <Link
-                  href={service.href}
-                  className="mt-4 inline-flex items-center gap-1.5 text-[#e8621a] font-semibold text-sm hover:gap-2.5 transition-all duration-200"
-                >
-                  Learn More
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
+
               </div>
             </div>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <Link
-            href="/services"
-            className="inline-flex items-center gap-2 border-2 border-[#0a1628] text-[#0a1628] hover:bg-[#0a1628] hover:text-white px-8 py-3 rounded font-semibold text-sm transition-all duration-200"
-          >
-            View All Services
-          </Link>
-        </div>
+        {/* CTA removed - coming soon */}
       </div>
     </section>
   );

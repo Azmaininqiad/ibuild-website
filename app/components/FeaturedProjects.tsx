@@ -93,40 +93,18 @@ export default function FeaturedProjects() {
                   </h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{project.scope}</p>
                 </div>
-                <div className="mt-4 flex items-center justify-between">
-                  <div>
+                  <div className="mt-4">
                     <p className="text-xs text-gray-400">
                       <span className="font-semibold text-gray-600">{project.client}</span> ·{" "}
                       {project.location}
                     </p>
                   </div>
-                  <Link
-                    href="/projects"
-                    className="text-[#e8621a] text-sm font-semibold hover:underline flex items-center gap-1"
-                  >
-                    Details
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
-                </div>
               </div>
             </div>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 bg-[#0a1628] hover:bg-[#1e4d8c] text-white px-8 py-3.5 rounded font-semibold text-sm transition-colors duration-200"
-          >
-            View Full Portfolio
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </Link>
-        </div>
+        {/* CTA removed - coming soon */}
       </div>
     </section>
   );

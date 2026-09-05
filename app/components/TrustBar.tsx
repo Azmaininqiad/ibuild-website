@@ -1,15 +1,15 @@
 import Image from "next/image";
 
 const clients = [
-  { src: "/images/Trust_Bar_1.png", alt: "SABIC" },
-  { src: "/images/Trust_Bar_2.png", alt: "Saudi Aramco" },
-  { src: "/images/Trust_Bar_3.png", alt: "SATORP" },
+  { src: "/images/SABIC_Logo.png", alt: "SABIC" },
+  { src: "/images/Saudi-Aramco-Logo.webp", alt: "Saudi Aramco" },
+  { src: "/images/satorp-logo.webp", alt: "SATORP" },
 ];
 
 const certs = [
-  "ISO 9001:2015",
-  "ISO 14001:2015",
-  "ISO 45001:2018",
+  { src: "/images/ISO_9001.png", label: "ISO 9001:2015" },
+  { src: "/images/ISO_14001.png", label: "ISO 14001:2015" },
+  { src: "/images/ISO_45001.png", label: "ISO 45001:2018" },
 ];
 
 export default function TrustBar() {
@@ -22,18 +22,20 @@ export default function TrustBar() {
             <p className="text-gray-400 text-sm font-medium whitespace-nowrap uppercase tracking-widest">
               Trusted by
             </p>
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-4">
               {clients.map((client) => (
                 <div
                   key={client.alt}
-                  className="relative h-10 w-24 flex items-center justify-center"
+                  className="bg-white/10 hover:bg-white/20 transition-colors rounded-lg px-4 py-2.5 flex items-center justify-center h-14 w-32"
                 >
-                  <Image
-                    src={client.src}
-                    alt={client.alt}
-                    fill
-                    className="object-contain filter brightness-0 invert opacity-70 hover:opacity-100 transition-opacity"
-                  />
+                  <div className="relative w-full h-full">
+                    <Image
+                      src={client.src}
+                      alt={client.alt}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               ))}
             </div>
@@ -47,14 +49,21 @@ export default function TrustBar() {
             <p className="text-gray-400 text-sm font-medium uppercase tracking-widest whitespace-nowrap">
               Certified Quality
             </p>
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex items-center gap-5">
               {certs.map((cert) => (
-                <span
-                  key={cert}
-                  className="bg-[#1e4d8c]/40 border border-[#1e4d8c] text-[#00a8cc] text-xs font-semibold px-3 py-1.5 rounded"
-                >
-                  {cert}
-                </span>
+                <div key={cert.label} className="flex flex-col items-center gap-1">
+                  <div className="relative w-10 h-10">
+                    <Image
+                      src={cert.src}
+                      alt={cert.label}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <span className="text-[#00a8cc] text-[10px] font-semibold text-center leading-tight">
+                    {cert.label}
+                  </span>
+                </div>
               ))}
             </div>
           </div>

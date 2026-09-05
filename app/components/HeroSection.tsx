@@ -86,12 +86,6 @@ export default function HeroSection() {
             >
               Request a Free Quote
             </Link>
-            <Link
-              href="/projects"
-              className="border border-white/40 hover:border-white text-white px-8 py-3.5 rounded font-semibold text-base transition-colors duration-200 backdrop-blur-sm"
-            >
-              View Our Projects
-            </Link>
           </div>
 
           {/* Stats row */}

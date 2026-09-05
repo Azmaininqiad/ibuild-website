@@ -1,20 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const quickLinks = [
+  { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
-  { label: "Projects", href: "/projects" },
-  { label: "Clients & Testimonials", href: "/clients" },
   { label: "Contact Us", href: "/contact" },
-  { label: "Careers", href: "/careers" },
 ];
 
 const services = [
-  { label: "Panel Board Manufacturing", href: "/services/panel-board-manufacturing" },
-  { label: "Cable Installation & Termination", href: "/services/cable-systems" },
-  { label: "Testing & Commissioning", href: "/services/testing-field-operations" },
-  { label: "Specialized Control Panels", href: "/services/specialized-panels" },
-  { label: "Civil & Field Works", href: "/services/civil-field-works" },
+  "Panel Board Manufacturing",
+  "Cable Installation & Termination",
+  "Testing & Commissioning",
+  "Specialized Control Panels",
+  "Civil & Field Works",
 ];
 
 const certifications = [
@@ -33,13 +31,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Column 1: Company info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-[#e8621a] rounded flex items-center justify-center">
-                <span className="text-white font-bold text-sm">iB</span>
+            <div className="bg-white rounded-lg px-3 py-2 inline-flex mb-4">
+              <div className="relative w-24 h-8">
+                <Image
+                  src="/images/Company_logo.png"
+                  alt="iBuild General Contractors"
+                  fill
+                  className="object-contain"
+                />
               </div>
-              <span className="text-white font-bold text-sm leading-tight">
-                Electrical Industrial<br />Service & MM
-              </span>
             </div>
             <p className="text-xs text-gray-500 mb-4 leading-relaxed">
               A division of iBuild International Company for Building Engineering & Contracting Ltd.
@@ -59,8 +59,13 @@ export default function Footer() {
                 </a>
               </p>
               <p>
-                <a href="mailto:info@ibuild.sa.com" className="hover:text-[#e8621a] transition-colors">
-                  info@ibuild.sa.com
+                <a href="mailto:globalengineeringsalessupport@gmail.com" className="hover:text-[#e8621a] transition-colors break-all">
+                  globalengineeringsalessupport@gmail.com
+                </a>
+              </p>
+              <p>
+                <a href="mailto:ibrahimhossain04@gmail.com" className="hover:text-[#e8621a] transition-colors">
+                  ibrahimhossain04@gmail.com
                 </a>
               </p>
             </address>
@@ -93,14 +98,9 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2.5">
               {services.map((svc) => (
-                <li key={svc.href}>
-                  <Link
-                    href={svc.href}
-                    className="text-sm hover:text-[#e8621a] transition-colors duration-200 flex items-center gap-2"
-                  >
-                    <span className="w-1 h-1 rounded-full bg-[#e8621a]/60" />
-                    {svc.label}
-                  </Link>
+                <li key={svc} className="flex items-center gap-2 text-sm">
+                  <span className="w-1 h-1 rounded-full bg-[#e8621a]/60 flex-shrink-0" />
+                  {svc}
                 </li>
               ))}
             </ul>
